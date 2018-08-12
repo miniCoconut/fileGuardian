@@ -1,9 +1,7 @@
 package com.miniye.guardian.watchdogs;
 
 import com.miniye.guardian.Constants;
-import com.miniye.guardian.model.FileOperator;
-import com.miniye.guardian.model.GenericFile;
-import com.miniye.guardian.utils.ReflectionUtils;
+import com.miniye.guardian.operator.FileOperator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,7 +10,7 @@ public abstract class FileWatchdog extends Thread {
 
 //    guard interval
     protected long delay = Constants.DEFAULT_DELAY;
-//    guard thread will stop when interrupted
+//    guard operator will stop when interrupted
     boolean interrupted = false;
 
     private FileOperator fileOperator;

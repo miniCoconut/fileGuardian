@@ -1,4 +1,4 @@
-package com.miniye.guardian.model;
+package com.miniye.guardian.filepojo;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,17 +1,13 @@
 package com.miniye.guardian.watchdogs;
 
 import com.miniye.guardian.Constants;
-import com.miniye.guardian.model.DirOperator;
-import com.miniye.guardian.model.GenericFile;
-import com.miniye.guardian.utils.ReflectionUtils;
+import com.miniye.guardian.operator.DirOperator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InterruptedIOException;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class DirWatchdog extends Thread {
     private Logger log = LoggerFactory.getLogger(DirWatchdog.class);
@@ -76,8 +72,13 @@ public class DirWatchdog extends Thread {
             }
         }
     }
-    
 
 
+    public static class DirectoryGuardThread extends DirWatchdog {
+        Logger log = LoggerFactory.getLogger(FileGuardThread.class);
 
+        public DirectoryGuardThread(String filename, Class clazz){
+            super(filename, clazz);
+        }
+    }
 }

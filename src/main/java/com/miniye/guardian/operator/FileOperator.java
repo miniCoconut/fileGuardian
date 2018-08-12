@@ -1,7 +1,7 @@
-package com.miniye.guardian.model;
+package com.miniye.guardian.operator;
 
+import com.miniye.guardian.filepojo.GenericFile;
 import com.miniye.guardian.utils.ReflectionUtils;
-import com.miniye.guardian.watchdogs.FileWatchdog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

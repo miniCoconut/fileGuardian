@@ -1,11 +1,11 @@
-package com.miniye.guardian.model;
+package com.miniye.guardian.operator;
 
 import com.miniye.guardian.proxy.ProxyFactory;
 import com.miniye.guardian.utils.ReflectionUtils;
 
 import java.lang.reflect.Method;
 
-public class ClassBean {
+public class ClassOperator {
     private Class cls;
     private Object instance;
 
@@ -50,6 +50,6 @@ public class ClassBean {
 
     @Override
     public String toString() {
-        return "ClassBean for Class " + cls.getName();
+        return "ClassOperator for Class " + cls.getName();
     }
 }

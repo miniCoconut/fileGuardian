@@ -1,6 +1,6 @@
 package com.miniye.guardian.utils;
 
-import com.miniye.guardian.model.ClassBean;
+import com.miniye.guardian.operator.ClassOperator;
 
 import java.io.File;
 
@@ -30,8 +30,8 @@ public class LoadClassUitils {
         return cls;
     }
 
-    public static Map<String, ClassBean> getClassMap(String jarPackagePath) {
-        Map<String, ClassBean> classMap = new HashMap<String, ClassBean>();
+    public static Map<String, ClassOperator> getClassMap(String jarPackagePath) {
+        Map<String, ClassOperator> classMap = new HashMap<String, ClassOperator>();
         try {
             File jarPackage = new File(jarPackagePath);
             if (jarPackage.isFile() && jarPackage.getName().endsWith(".jar")) {
@@ -47,9 +47,9 @@ public class LoadClassUitils {
                             String className = jarEntryName.substring(0, jarEntryName.lastIndexOf("."))
                                     .replaceAll("/", ".");
                             Class cls = urlClassLoader.loadClass(className);
-                            ClassBean classBean = new ClassBean();
-                            classBean.setCls(cls);
-                            classMap.put(className, classBean);
+                            ClassOperator classOperator = new ClassOperator();
+                            classOperator.setCls(cls);
+                            classMap.put(className, classOperator);
                         }
                     }
 
